@@ -30,7 +30,7 @@
                                         <h3
                                             class="text-center font-weight-light my-4"
                                         >
-                                            RentalMobil App
+                                            Rental Mobil App
                                         </h3>
                                     </div>
                                     <div class="card-body">

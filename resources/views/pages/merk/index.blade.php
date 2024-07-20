@@ -14,7 +14,7 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>No.</th>
                                 <th>Merk</th>
                                 <th>Action</th>
                             </tr>

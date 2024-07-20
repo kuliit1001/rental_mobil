@@ -15,7 +15,7 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>No.</th>
                                 <th>Tipe Mobil</th>
                                 <th>Action</th>
                             </tr>

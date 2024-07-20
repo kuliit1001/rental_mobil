@@ -1,36 +1,38 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    
-    function index()  
+    public function index()  
     {
         return view('pages.auth.login');
     }
-    function login(Request $request)
+    
+    public function login(Request $request)
     {
         $validatedUser = $request->validate([
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required',
         ]);
 
-        if (Auth::attempt($validatedUser)){
-            return redirect()->to('/tipemobil');
-        }else {
-            return redirect()->to('/login');
+        if (Auth::attempt($validatedUser)) {
+            return redirect()->route('tipemobil.index');
+        } else {
+            return redirect()->route('login')->with('error', 'Invalid email or password.');
         }
     }
-    function logout(Request $request)
+
+    public function logout(Request $request)
     {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->to('/login');
+        return redirect()->route('login');
     } 
 }
